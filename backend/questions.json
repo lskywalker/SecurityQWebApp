@@ -1,0 +1,179 @@
+[
+    {
+        "id": 1,
+        "category": "User Inventory Management",
+        "question": "Do you maintain an up-to-date inventory of all users?",
+        "options": ["Yes", "No"],
+        "subquestions": [
+            {
+                "id": "1.1",
+                "question": "How frequently is this inventory reviewed and updated?",
+                "options": ["Monthly", "Quarterly", "Annually", "Never"]
+            },
+            {
+                "id": "1.2",
+                "question": "Is there a way to quickly see who has access to critical systems at any time?",
+                "options": ["Yes", "No"]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "category": "Conditional User Access",
+        "question": "Do you have rules that allow or block user access depending on their location or device?",
+        "options": ["Yes", "No"],
+        "subquestions": [
+            {
+                "id": "2.1",
+                "question": "Do employees need to use secure devices to access sensitive data?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "2.2",
+                "question": "Does your system detect and stop risky login attempts (unrecognized locations)?",
+                "options": ["Yes", "No"]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "category": "Authentication",
+        "question": "Have you implemented Multi-Factor Authentication (MFA)?",
+        "options": ["Yes", "No"],
+        "subquestions": [
+            {
+                "id": "3.1",
+                "question": "Is MFA enforced for all users?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "3.2",
+                "question": "Do you enforce strong MFA methods like security keys or authenticator apps, instead of an SMS-based MFA?",
+                "options": ["Yes", "No"]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "category": "Privileged Access Management",
+        "question": "Do you have a system in place to manage and control high-level access to critical systems or data (e.g. admin access)?",
+        "options": ["Yes", "No"],
+        "subquestions": [
+            {
+                "id": "4.1",
+                "question": "How often are these privileges reviewed and updated?",
+                "options": ["Monthly", "Quarterly", "Annually", "Never"]
+            },
+            {
+                "id": "4.2",
+                "question": "Do privileged users need extra security steps (like MFA) before logging in?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "4.3",
+                "question": "Is there an audit log of who accessed sensitive data?",
+                "options": ["Yes", "No"]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "category": "Identity Federation & User Credentialing",
+        "question": "Do you have a system that lets employees or external partners log in to different tools/platforms using the same account?",
+        "options": ["Yes", "No"],
+        "subquestions": [
+            {
+                "id": "5.1",
+                "question": "Is there a process for adding, updating, and removing user accounts?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "5.2",
+                "question": "Do you use a secure login system (Microsoft Azure AD, Google Identity, Okta)?",
+                "options": ["Yes", "No"]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "category": "Behavioral, Contextual Identity and Biometrics",
+        "question": "Do you use things like login behavior, location, or biometrics (fingerprint/face scan) to check if users are who they say they are?",
+        "options": ["Yes", "No"],
+        "subquestions": [
+            {
+                "id": "6.1",
+                "question": "Do you check the location a user is logging in from?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "6.2",
+                "question": "Do you use fingerprint or face scan for logging in?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "6.3",
+                "question": "Do you require extra verification if a login seems suspicious?",
+                "options": ["Yes", "No"]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "category": "Least Privileged Access",
+        "question": "Do you make sure employees only have access to the systems and data they specifically need?",
+        "options": ["Yes", "No"],
+        "subquestions": [
+            {
+                "id": "7.1",
+                "question": "How regularly do you review and update user access permissions to remove unnecessary access?",
+                "options": ["Monthly", "Quarterly", "Annually", "After an event(Role change or offboarding)", "Never"]
+            },
+            {
+                "id": "7.2",
+                "question": "Do you limit high-level access (admin) to only people who really need it?",
+                "options": ["Yes", "No"]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "category": "Continuous Authentication",
+        "question": "Do you check if a logged-in user is still the right person during their session?",
+        "options": ["Yes", "No"],
+        "subquestions": [
+            {
+                "id": "8.1",
+                "question": "How often is this check performed?",
+                "options": ["Every few minutes", "Hourly", "Daily"]
+            },
+            {
+                "id": "8.2",
+                "question": "Does the system automatically log out or block access when there is suspicious activity?",
+                "options": ["Yes", "No"]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "category": "Integrated ICAM Platform",
+        "question": "Do you have a system that manages user identities, logins, and access permissions across all your tools in one place? (ICAM)",
+        "options": ["Yes", "No"],
+        "subquestions": [
+            {
+                "id": "9.1",
+                "question": "Can you easily see who has access to what and apply changes across all systems?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "9.2",
+                "question": "Can your system detect and block unauthorized access attempts across multiple applications?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "9.3",
+                "question": "Thank you for answering!",
+                "options": ["SEE RESULT"]
+            }
+        ]
+    }
+]
