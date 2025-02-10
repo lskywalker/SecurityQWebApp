@@ -66,4 +66,4 @@ const getRiskLevel = (score) => {
 	return "Non-Existent";
 };
 
-app.listen(5001, () => console.log("\x1b[32m%s\x1b[0m", "Server running on port [5001]", "\x1b[0m"));
+app.listen(5001, () => console.log("Server running on port [5001]"));
