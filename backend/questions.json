@@ -1,179 +1,151 @@
 [
     {
         "id": 1,
-        "category": "User Inventory Management",
-        "question": "Do you maintain an up-to-date inventory of all users?",
+        "category": "Authentication Basics",
+        "question": "Do you require Multi-Factor Authentication (MFA) for all users?",
         "options": ["Yes", "No"],
+        "explanation": "MFA (Multi-Factor Authentication) is an extra layer of security that asks for more than just a password when logging in. Most people know it as a code sent via SMS, but it can also be an app notification, fingerprint, or security key. This helps protect your account by making sure only you can access it, even if someone else knows your password.",
         "subquestions": [
             {
                 "id": "1.1",
-                "question": "How frequently is this inventory reviewed and updated?",
-                "options": ["Monthly", "Quarterly", "Annually", "Never"]
+                "question": "Is MFA required for every login, including remote access?",
+                "options": ["Yes", "No"]
             },
             {
                 "id": "1.2",
-                "question": "Is there a way to quickly see who has access to critical systems at any time?",
+                "question": "Do you use strong MFA methods (e.g., security keys, authenticator apps) instead of SMS codes?",
                 "options": ["Yes", "No"]
             }
         ]
     },
     {
         "id": 2,
-        "category": "Conditional User Access",
-        "question": "Do you have rules that allow or block user access depending on their location or device?",
+        "category": "User & Privileged Access Management",
+        "question": "Do you maintain an up-to-date list of all employees and their access levels?",
         "options": ["Yes", "No"],
+        "explanation": "Do you keep track of who can access what? Just like a guest list for an event, your company should have a list of employees and what systems or data they can use. This helps make sure that when someone leaves or changes jobs, they don’t keep access to things they shouldn’t.",
         "subquestions": [
             {
                 "id": "2.1",
-                "question": "Do employees need to use secure devices to access sensitive data?",
-                "options": ["Yes", "No"]
+                "question": "How often is this list reviewed?",
+                "options": ["Monthly", "Quarterly", "Annually", "Never"]
             },
             {
                 "id": "2.2",
-                "question": "Does your system detect and stop risky login attempts (unrecognized locations)?",
+                "question": "Is access immediately revoked when someone leaves the company?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "2.3",
+                "question": "Is admin-level access strictly limited to essential personnel?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "2.4",
+                "question": "Do you keep an audit log of who accessed sensitive data?",
                 "options": ["Yes", "No"]
             }
         ]
     },
     {
         "id": 3,
-        "category": "Authentication",
-        "question": "Have you implemented Multi-Factor Authentication (MFA)?",
+        "category": "Identity Federation & Secure Credentialing",
+        "question": "Do employees and external partners use a single, secure account to access different tools/platforms? (SSO, Single Sign On)",
         "options": ["Yes", "No"],
+        "explanation": "Can employees and partners log in to all work tools with one account, like how you use a Google or Apple account for different apps? Instead of managing many passwords, they can use one secure login (Single Sign On) to access everything.",
         "subquestions": [
             {
                 "id": "3.1",
-                "question": "Is MFA enforced for all users?",
+                "question": "Is MFA (Multi-Factor Authentication) enforced on the SSO (Single Sign on)?",
                 "options": ["Yes", "No"]
             },
             {
                 "id": "3.2",
-                "question": "Do you enforce strong MFA methods like security keys or authenticator apps, instead of an SMS-based MFA?",
+                "question": "Do you use a recognized identity provider (Azure AD, Google Identity, Okta, etc.)?",
                 "options": ["Yes", "No"]
             }
         ]
     },
     {
         "id": 4,
-        "category": "Privileged Access Management",
-        "question": "Do you have a system in place to manage and control high-level access to critical systems or data (e.g. admin access)?",
+        "category": "Conditional Access & Login",
+        "question": "Do you control user access based on location or the type of device they are using?",
         "options": ["Yes", "No"],
+        "explanation": "If a user is located in Amsterdam, but suddenly tries to log in from Iran or someone tries to log in from a device that the user has never used before.",
         "subquestions": [
             {
                 "id": "4.1",
-                "question": "How often are these privileges reviewed and updated?",
-                "options": ["Monthly", "Quarterly", "Annually", "Never"]
-            },
-            {
-                "id": "4.2",
-                "question": "Do privileged users need extra security steps (like MFA) before logging in?",
+                "question": "Do employees need to use company-approved (or secure) devices for sensitive data?",
                 "options": ["Yes", "No"]
             },
             {
-                "id": "4.3",
-                "question": "Is there an audit log of who accessed sensitive data?",
+                "id": "4.2",
+                "question": "Do you detect and block suspicious logins?",
                 "options": ["Yes", "No"]
             }
         ]
     },
     {
         "id": 5,
-        "category": "Identity Federation & User Credentialing",
-        "question": "Do you have a system that lets employees or external partners log in to different tools/platforms using the same account?",
+        "category": "Behavioural, Contextual Identity & Biometrics",
+        "question": "Do you use login behaviour, location, or biometrics to verify user identity?",
         "options": ["Yes", "No"],
+        "explanation": "Are you checking whether you use specific methods to confirm a user's identity when they log in. These methods could include tracking how they usually log in (login behaviour), checking their location, or using biometric data like fingerprints or facial recognition.",
         "subquestions": [
             {
                 "id": "5.1",
-                "question": "Is there a process for adding, updating, and removing user accounts?",
+                "question": "Is fingerprint or face scanning required for logging into sensitive systems?",
                 "options": ["Yes", "No"]
             },
             {
                 "id": "5.2",
-                "question": "Do you use a secure login system (Microsoft Azure AD, Google Identity, Okta)?",
+                "question": "Do employees get alerts if their account is accessed from an unfamiliar device?",
                 "options": ["Yes", "No"]
             }
         ]
     },
     {
         "id": 6,
-        "category": "Behavioral, Contextual Identity and Biometrics",
-        "question": "Do you use things like login behavior, location, or biometrics (fingerprint/face scan) to check if users are who they say they are?",
+        "category": "Continuous Authentication",
+        "question": "Do you have measures in place to ensure unattended workstations are not left unlocked?",
         "options": ["Yes", "No"],
+        "explanation": "Do you have a system in place to make sure that if someone walks away from their computer, it locks itself or logs out automatically? This helps prevent someone else from using their account or accessing sensitive data.",
         "subquestions": [
             {
                 "id": "6.1",
-                "question": "Do you check the location a user is logging in from?",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "6.2",
-                "question": "Do you use fingerprint or face scan for logging in?",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "6.3",
-                "question": "Do you require extra verification if a login seems suspicious?",
+                "question": "Do computers automatically lock or log out after a period of inactivity?",
                 "options": ["Yes", "No"]
             }
         ]
     },
     {
         "id": 7,
-        "category": "Least Privileged Access",
-        "question": "Do you make sure employees only have access to the systems and data they specifically need?",
+        "category": "Session Security",
+        "question": "Do you check if a logged-in user is still the same person during their session?",
         "options": ["Yes", "No"],
+        "explanation":"Is there a system that keeps checking if the person using the account is still the same person who originally logged in. Think of it like online banking, after a while, if you're inactive or something seems off, it might log you out for security. But instead of just using a timer, this is about checking in real-time if it’s still really you that is using the account.",
         "subquestions": [
             {
                 "id": "7.1",
-                "question": "How regularly do you review and update user access permissions to remove unnecessary access?",
-                "options": ["Monthly", "Quarterly", "Annually", "After an event(Role change or offboarding)", "Never"]
+                "question": "How often is this check performed?",
+                "options": ["Every few minutes", "Hourly", "Per session", "Never"]
             },
             {
                 "id": "7.2",
-                "question": "Do you limit high-level access (admin) to only people who really need it?",
+                "question": "Does the system log out or block access when there is suspicious activity?",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "7.3",
+                "question": "Do you require re-authentication for sensitive actions (e.g., money transfers)?",
                 "options": ["Yes", "No"]
             }
         ]
     },
     {
         "id": 8,
-        "category": "Continuous Authentication",
-        "question": "Do you check if a logged-in user is still the right person during their session?",
-        "options": ["Yes", "No"],
-        "subquestions": [
-            {
-                "id": "8.1",
-                "question": "How often is this check performed?",
-                "options": ["Every few minutes", "Hourly", "Daily"]
-            },
-            {
-                "id": "8.2",
-                "question": "Does the system automatically log out or block access when there is suspicious activity?",
-                "options": ["Yes", "No"]
-            }
-        ]
-    },
-    {
-        "id": 9,
-        "category": "Integrated ICAM Platform",
-        "question": "Do you have a system that manages user identities, logins, and access permissions across all your tools in one place? (ICAM)",
-        "options": ["Yes", "No"],
-        "subquestions": [
-            {
-                "id": "9.1",
-                "question": "Can you easily see who has access to what and apply changes across all systems?",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "9.2",
-                "question": "Can your system detect and block unauthorized access attempts across multiple applications?",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "9.3",
-                "question": "Thank you for answering!",
-                "options": ["SEE RESULT"]
-            }
-        ]
+        "category": "End",
+        "question": "Thank you for answering the questions. Calculate your score below.",
+        "options": ["Calculate Score"]
     }
 ]

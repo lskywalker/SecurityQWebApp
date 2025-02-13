@@ -10,7 +10,8 @@ function App() {
 	const [score, setScore] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [assessmentComplete, setAssessmentComplete] = useState(false);
-  const [riskLevel, setRiskLevel] = useState("");
+	const [riskLevel, setRiskLevel] = useState("");
+	const [selectedExplanation, setSelectedExplanation] = useState(null);
 
 	useEffect(() => {
 		axios
@@ -51,7 +52,6 @@ function App() {
                 subresponses: {
                     ...prev[currentQuestion.id]?.subresponses,
                     [subId]: subAnswer,
-                    "9.3": "Placeholder", // ✅ Dirty Fake subquestion to fix last answer not working....
                 },
             },
         };
@@ -71,6 +71,7 @@ function App() {
 	const moveToNextQuestion = () => {
 		if (currentIndex < questions.length - 1) {
 			setCurrentIndex((prevIndex) => prevIndex + 1);
+			setSelectedExplanation(null);
 			setSubIndex(-1);
 		} else {
 			handleSubmit();
@@ -99,7 +100,7 @@ function App() {
 			<div className="container">
 				<h1>Assessment Completed</h1>
 				<h2>Your Score: {score}%</h2>
-        <h3>Risk Level: {riskLevel}</h3>
+        		<h3>Risk Level: {riskLevel}</h3>
 			</div>
 		);
 	}
@@ -132,6 +133,22 @@ function App() {
 					{option}
 				</button>
 			))}
+
+			<div style={{ marginTop: "10px" }}>
+				<button
+					style={{ background: "none", border: "none", cursor: "pointer" }}
+					onClick={() => setSelectedExplanation(selectedExplanation === currentQuestion.explanation ? null : currentQuestion.explanation)}
+				>
+					<img 
+						src="/img/question-mark.jpg" 
+						alt="More Info" 
+						style={{ width: "20px" }}
+					/>
+					<span style={{ color: "#ff6b6b", fontStyle: "italic", marginLeft: "5px" }}>More info</span>
+				</button>
+			</div>
+
+			{selectedExplanation && <p style={{ fontSize: "14px", color: "gray", fontStyle: "italic" }}>{selectedExplanation}</p>}
 		</div>
 	);
 }

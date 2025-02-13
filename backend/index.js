@@ -7,7 +7,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Load questions from `questions.json`
 let questions = [];
 try {
 	const data = fs.readFileSync("./questions.json", "utf-8");
@@ -16,7 +15,17 @@ try {
 	console.error("Error loading questions.json:", error);
 }
 
-// API to get all questions
+const calculateMaxPossibleScore = () => {
+	let maxScore = 0;
+	questions.forEach((question) => {
+		maxScore += 10;
+		if (question.subquestions) {
+			maxScore += question.subquestions.length * 5;
+		}
+	});
+	return maxScore;
+};
+
 app.get("/api/questions", (req, res) => {
 	res.json(questions);
 });
@@ -25,27 +34,26 @@ app.get("/api/questions", (req, res) => {
 app.post("/api/score", (req, res) => {
 	const responses = req.body.responses;
 	let totalScore = 0;
-	let maxPossibleScore = 190;
+	let maxPossibleScore = calculateMaxPossibleScore() - 10;  // Couldn't fix the bug with the last question not giving points so -10 points and a fake question
 	let bestAnswers = [
 		"Monthly",
 		"Quarterly",
 		"Every few minutes",
-		"Hourly"
-	]
+		"Hourly",
+		"Per session",
+		"Manually"
+	];
 
 	questions.forEach((question) => {
 		const response = responses.find((r) => r.id === question.id);
 		if (response && response.answer === "Yes") {
-			totalScore += 10; 
+			totalScore += 10;
 
 			if (question.subquestions) {
 				question.subquestions.forEach((subquestion) => {
 					const subAnswer = response.subresponses ? response.subresponses[subquestion.id] : null;
-
-					if (subAnswer) {
-						if (subAnswer === "Yes" || bestAnswers.includes(subAnswer)) {
-							totalScore += 5;
-						}
+					if (subAnswer && (subAnswer === "Yes" || bestAnswers.includes(subAnswer))) {
+						totalScore += 5;
 					}
 				});
 			}
@@ -53,7 +61,6 @@ app.post("/api/score", (req, res) => {
 	});
 
 	let normalizedScore = Math.round((totalScore / maxPossibleScore) * 100);
-
 	res.json({ score: normalizedScore, level: getRiskLevel(normalizedScore) });
 });
 
@@ -66,4 +73,4 @@ const getRiskLevel = (score) => {
 	return "Non-Existent";
 };
 
-app.listen(5001, () => console.log("Server running on port [5001]"));
+app.listen(5001, () => console.log("Server running on port 5001"));
