@@ -1,0 +1,131 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ✅ Restore Nice Input Box Styling */
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #007BFF;
+}
+
+.input-box {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.input-box:focus {
+    outline: none;
+}
+
+/* ✅ Restore Nice Arrow Button */
+.next-button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 18px;
+}
+
+.next-button:hover {
+    background-color: #0056b3;
+}
+
+.next-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ✅ Multi-Select Container */
+.multi-select-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 80%;
+    max-width: 400px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Multi-Select Option Styling */
+.multi-select-option {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.multi-select-option:hover {
+    background: #f0f0f0;
+}
+
+/* ✅ Stylish Checkbox */
+.multi-select-option input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* ✅ Checkbox Checked State */
+.multi-select-option input:checked {
+    background-color: #007BFF;
+    border-color: #0056b3;
+}
+
+/* ✅ Custom Checkmark */
+.multi-select-option input:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    left: 5px;
+    top: 1px;
+}
+
+/* ✅ Center the Multi-Select "Next" Button */
+.multi-select-container .next-button {
+    align-self: center;
+    margin-top: 12px;
+}

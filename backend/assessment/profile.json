@@ -1,0 +1,58 @@
+[
+	{
+		"id": "title",
+		"question": "What is your job title?",
+		"type": "text"
+	},
+	{
+		"id": "description",
+		"question": "Which best describes your role?",
+		"type": "dropdown",
+		"options": [
+			"I manage IT and security",
+			"I handle security as part of my IT role",
+			"I make security decisions but don’t manage IT",
+			"Other"
+]
+	},
+	{
+		"id": "industry",
+		"question": "Which industry is your business in?",
+		"type": "dropdown",
+		"options": [
+			"Healthcare", "Finance & Banking", "Retail & E-commerce", "Technology & SaaS",
+			"Government", "Education", "Manufacturing", "Legal & Law Firms",
+			"Media & Entertainment", "Energy & Utilities", "Telecommunications",
+			"Real Estate & Construction", "Other"
+]
+	},
+	{
+		"id": "compliance",
+		"question": "Are you required to follow any security/compliance regulations?",
+		"type": "multi-select",
+		"options": ["GDPR", "HIPAA", "ISO 27001", "NIST", "SOC 2", "None / Not sure"]
+	},
+	{
+		"id": "biggest_challenge",
+        "question": "What is your biggest challenge with identity security today?",
+        "type": "dropdown",
+        "options": [
+            "Managing too many passwords & logins",
+            "Enforcing Multi-Factor Authentication (MFA)",
+            "Managing user access & permissions effectively",
+            "Securing remote workers & external partners",
+            "Lack of visibility into who has access to what",
+            "Detecting and responding to unauthorized access attempts",
+            "Automating identity lifecycle (new hires, terminations, role changes)",
+            "Integrating identity security with existing tools",
+            "Compliance with regulations",
+            "Other"
+		]
+	},
+	{
+		"id": "challenge_reason",
+		"question": "Why is this a challenge for your business?",
+		"type": "text"
+	}
+]
+  

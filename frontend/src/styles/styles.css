@@ -102,3 +102,50 @@ body {
     transition: width 0.3s ease-in-out;
   }
   
+  /* ✅ Profile Section */
+.profile-container {
+	margin-top: 30px;
+	padding: 20px;
+	background: #f8f9fa;
+	border-radius: 12px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	width: 80%;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ✅ Profile Card */
+.profile-card {
+	background: white;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+	margin-top: 10px;
+}
+
+.profile-card p {
+	font-size: 16px;
+	color: #333;
+	margin: 8px 0;
+}
+
+/* ✅ Restart Button */
+.button {
+	display: block;
+	width: 200px;
+	padding: 12px;
+	margin: 20px auto;
+	font-size: 16px;
+	color: white;
+	background-color: #007BFF;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+.button:hover {
+	background-color: #0056b3;
+}
