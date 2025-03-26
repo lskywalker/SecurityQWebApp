@@ -1,2 +1,4 @@
 node_modules
 .vscode
+/backend/assessment/responses.json
+/backend/.env

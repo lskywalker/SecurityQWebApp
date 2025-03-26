@@ -1,131 +1,241 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
+	/* display: flex; */
+	/* flex-direction: column;
+	align-items: center;
+	justify-content: center; */
+	height: 100vh;
+	font-family: Arial, sans-serif;
 }
 
-h1 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* ✅ Restore Nice Input Box Styling */
-.input-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    max-width: 400px;
-    background: #ffffff;
-    padding: 12px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #007BFF;
-}
-
+/* A full-page flex container for the Profile questions */
+.profile-page {
+	/* Let it fill the viewport height for centering */
+	min-height: 100vh;
+	
+	/* Flex column so we can center vertically and scroll if needed */
+	display: flex;
+	flex-direction: column;
+	
+	/* If you want a background gradient, do it here */
+	background: linear-gradient(to bottom right, #f8f9fa, #dee2e6);
+	margin: 0;
+	padding: 20px;
+	box-sizing: border-box;
+	}
+	
+	/* A "card" that holds the question text + input fields */
+	.question-card {
+	/* Center it within .profile-page */	
+	margin: auto;
+	
+	background: #ffffff;
+	border-radius: 10px;
+	padding: 30px;
+	max-width: 600px;
+	width: 90%;
+	
+	/* Subtle box shadow for a nice card look */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	
+	/* Center the text inside the card */
+	text-align: center;
+	}
+	
+	/* Optional: slightly different sizing for the question text */
+	.question-card h1 {
+	font-size: 1.8rem;
+	margin-bottom: 20px;
+	}
+	
+	/* Keep your existing .input-container, .input-box, .next-button, etc. */
+	.input-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	max-width: 400px;
+	background: #ffffff;
+	padding: 12px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	border: 2px solid #007BFF;
+	margin: 0 auto; /* Center horizontally inside .question-card */
+	}
+	
+	/* ... and so on for .multi-select-container, .dropdown-container, etc. */	
 .input-box {
-    flex: 1;
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    background: transparent;
+	flex: 1;
+	padding: 12px;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	background: transparent;
 }
 
 .input-box:focus {
-    outline: none;
+	outline: none;
 }
 
 /* ✅ Restore Nice Arrow Button */
 .next-button {
-    background-color: #007BFF;
-    border: none;
-    color: white;
-    padding: 12px;
-    border-radius: 50%;
-    margin-left: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 18px;
+	background-color: #007BFF;
+	border: none;
+	color: white;
+	padding: 12px;
+	border-radius: 50%;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	font-size: 18px;
 }
 
 .next-button:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
 
 .next-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+	background-color: #ccc;
+	cursor: not-allowed;
 }
 
 /* ✅ Multi-Select Container */
 .multi-select-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 80%;
-    max-width: 400px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	width: 80%;
+	max-width: 400px;
+	padding: 15px;
+	background: #f9f9f9;
+	border-radius: 10px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* ✅ Multi-Select Option Styling */
 .multi-select-option {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    width: 100%;
-    padding: 10px;
-    background: white;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: background 0.2s ease;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	width: 100%;
+	padding: 10px;
+	background: white;
+	border-radius: 8px;
+	margin-bottom: 8px;
+	cursor: pointer;
+	transition: background 0.2s ease;
 }
 
 .multi-select-option:hover {
-    background: #f0f0f0;
+	background: #f0f0f0;
 }
 
 /* ✅ Stylish Checkbox */
 .multi-select-option input {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #007BFF;
-    border-radius: 5px;
-    margin-right: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-    position: relative;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #007BFF;
+	border-radius: 5px;
+	margin-right: 12px;
+	cursor: pointer;
+	transition: 0.3s;
+	position: relative;
 }
 
 /* ✅ Checkbox Checked State */
 .multi-select-option input:checked {
-    background-color: #007BFF;
-    border-color: #0056b3;
+	background-color: #007BFF;
+	border-color: #0056b3;
 }
 
 /* ✅ Custom Checkmark */
 .multi-select-option input:checked::after {
-    content: '✔';
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    position: absolute;
-    left: 5px;
-    top: 1px;
+	content: '✔';
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	left: 5px;
+	top: 1px;
 }
 
 /* ✅ Center the Multi-Select "Next" Button */
 .multi-select-container .next-button {
-    align-self: center;
-    margin-top: 12px;
+	align-self: center;
+	margin-top: 12px;
+}
+
+/* ✅ Improved Dropdown Styling */
+.dropdown-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	max-width: 400px;
+	padding: 15px;
+}
+
+.dropdown-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px; /* Space between dropdown and button */
+	width: 100%;
+}
+
+/* Styled Dropdown */
+.dropdown {
+	flex: 1;
+	padding: 12px;
+	font-size: 16px;
+	border-radius: 8px;
+	border: 2px solid #007BFF;
+	background-color: white;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+/* ✅ Hover and Focus Effects */
+.dropdown:hover,
+.dropdown:focus {
+	border-color: #0056b3;
+	outline: none;
+}
+
+/* ✅ Dropdown Wrapper for Custom Styling */
+.dropdown-container::after {
+	content: "▼";
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	font-size: 14px;
+	color: #007BFF;
+}
+
+/* ✅ Style for Other Input Box in Dropdown */
+.other-input-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.other-input-container .input-box {
+	width: 100%;
+	border: 2px solid #007BFF;
+	border-radius: 8px;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.other-input-container .next-button {
+	margin-top: 10px;
+}
+
+.dropdown-container .next-button {
+	margin-top: 12px;
 }
